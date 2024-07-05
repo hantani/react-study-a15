@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 interface CharacterIF {
   id: number;
@@ -45,11 +46,11 @@ const Name = styled.p`
 `;
 
 function CharacterLists({ characters }: { characters: CharacterIF[] }) {
-  console.log(characters);
+  const [rearrangedArr, setRearrangedArr] = useState();
 
   return (
     <Lists>
-      {characters.slice(0, 100).map((character) => {
+      {characters.map((character) => {
         if (character === undefined) return null;
         return (
           <List key={character.id}>

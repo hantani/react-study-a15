@@ -17,6 +17,8 @@ function Charcters() {
     queryFn: fetchCharacters,
   });
 
+  console.log(json);
+
   return (
     <>
       {isLoading ? (
